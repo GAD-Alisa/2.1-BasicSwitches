@@ -5,42 +5,39 @@ using UnityEngine;
 public class BulbController : MonoBehaviour
 {
     public GameObject Bulb;
-    private bool isOn = false;
+    public bool isOn;
     private Animator bulbAnimator;
-    switchOff.GetComponent<ManualSwitchController>();
+    
+
     // Start is called before the first frame update
+     void Awake()
+    {
+        bulbAnimator = gameObject.GetComponent<Animator>();
+        turnOff();
+    }
     void Start()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SwitchLightOn()
-        SwitchLightOff()
-
-    }
     
    
  
-    void SwitchLightOn()
+    void turnOn()
     { 
-       if switchOff == true && isOn == false
-        {
+      
 
-            bulbAnimator.SetBool("IsSwitchOn", true);
-            isOn = true
-        }
+        bulbAnimator.SetBool("IsSwitchOn", true);
+        isOn = true;
+      
     }
 
-    void SwitchLightOff()
+    void turnOff()
     { 
-      if switchOff == false && isOn == true
-       {
-           bulbAnimator.SetBool("IsSwitchOn", true);
-           isOn = true
-       }
+      
+           bulbAnimator.SetBool("IsSwitchOn", false);
+        isOn = false;
+      
     }
 
 
