@@ -23,7 +23,7 @@ public class BulbController : MonoBehaviour
     
    
  
-    void turnOn()
+    public void turnOn()
     { 
       
 
@@ -32,7 +32,7 @@ public class BulbController : MonoBehaviour
       
     }
 
-    void turnOff()
+    public void turnOff()
     { 
       
            bulbAnimator.SetBool("IsSwitchOn", false);
